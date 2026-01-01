@@ -216,6 +216,12 @@ INSERT INTO Nakshatras (Name, StartDegree, EndDegree) VALUES
 ('Revati', 346.40, 360.00);
 
 
+CREATE TABLE AdminUsers (
+    Username varchar(50) NOT NULL,
+    PasswordHash NVarchar(max) NOT NULL,
+    Role varchar(50) NOT NULL
+);
+
 -- Sample Data 
 
 INSERT INTO Horoscopes 
@@ -223,3 +229,13 @@ INSERT INTO Horoscopes
 VALUES 
 (5, 1, CAST(GETDATE() AS DATE),
 'Today brings confidence and leadership opportunities.');
+
+
+
+INSERT INTO Users 
+(FullName, Email, PasswordHash, DateOfBirth, TimeOfBirth, PlaceOfBirth, CreatedOn)
+VALUES
+('Test User', 'user@test.com', 'HASH', '1998-08-15', '10:30', 'Raipur', '1998-08-15');
+
+INSERT INTO AdminUsers (Username, PasswordHash, Role)
+VALUES ('admin', 'HASH', 'Admin');
