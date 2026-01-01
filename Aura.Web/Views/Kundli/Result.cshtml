@@ -1,0 +1,38 @@
+@model Aura.Web.Models.ViewModels.KundliOutputVM
+
+<div class="row g-4">
+
+    <!-- KUNDLI CHART -->
+    <div class="col-lg-6">
+        <div class="aura-card text-center">
+            <h3 class="aura-title">Birth Chart (Kundli)</h3>
+
+            <div class="kundli-grid mt-4">
+                @for (int house = 1; house <= 12; house++)
+                {
+                    <div class="kundli-house">
+                        <span class="house-number">@house</span>
+                        @foreach (var planet in Model.HousePlanets[house])
+                        {
+                            <div class="planet">@planet</div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- DETAILS -->
+    <div class="col-lg-6">
+        <div class="aura-card">
+            <h3 class="aura-title">Kundli Details</h3>
+
+            <p><b>Name:</b> @Model.FullName</p>
+            <p><b>DOB:</b> @Model.DateOfBirth.ToShortDateString()</p>
+            <p><b>Time:</b> @Model.TimeOfBirth</p>
+            <p><b>Place:</b> @Model.PlaceOfBirth</p>
+            <p><b>Lagna:</b> @Model.Lagna</p>
+        </div>
+    </div>
+
+</div>

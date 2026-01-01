@@ -66,3 +66,64 @@ body.aura-body {
   font-size: 13px;
   border-top: 1px solid var(--border-dark);
 }
+
+/* DASHBOARD CARD */
+.aura-dashboard-card {
+  display: block;
+  background: linear-gradient(145deg, #141422, #0e0e18);
+  border: 1px solid var(--border-dark);
+  border-radius: 20px;
+  padding: 36px;
+  text-decoration: none;
+  color: var(--text-light);
+  height: 100%;
+  transition: all 0.35s ease;
+}
+
+.aura-dashboard-card h3 {
+  color: rgb(251, 255, 42);
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.aura-dashboard-card p {
+  color: white;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.aura-dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+  border-color: var(--gold);
+}
+.kundli-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.kundli-house {
+  background: #0e0e18;
+  border: 1px solid var(--gold);
+  min-height: 80px;
+  padding: 6px;
+  position: relative;
+  font-size: 13px;
+}
+
+.house-number {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 10px;
+  color: var(--gold);
+}
+
+.planet {
+  font-size: 12px;
+  margin-top: 14px;
+}
+
+

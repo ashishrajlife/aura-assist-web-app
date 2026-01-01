@@ -1,21 +1,12 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-[Authorize(Roles = "Admin")]
-public class DashboardController : Controller
+namespace Aura.Web.Controllers
 {
-    public IActionResult Index()
+    public class DashboardController : Controller
     {
-        return RedirectToAction("User");
-    }
-
-    public IActionResult User()
-    {
-        return View("UserDashboard");
-    }
-
-    public IActionResult Admin()
-    {
-        return View("AdminDashboard");
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

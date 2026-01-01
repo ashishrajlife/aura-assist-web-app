@@ -1,8 +1,40 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<div class="text-center mb-5">
+    <h1 class="aura-title">Welcome to AURA</h1>
+    <p class="aura-date">Your personal cosmic dashboard</p>
+</div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row g-4">
+
+    <!-- Daily Horoscope -->
+    <div class="col-md-6">
+        <a href="/Horoscope/Daily" class="aura-dashboard-card">
+            <h3>🌞 Daily Horoscope</h3>
+            <p>View today's prediction based on your zodiac</p>
+        </a>
+    </div>
+
+    <!-- Kundli -->
+    <div class="col-md-6">
+        <a href="/Kundli/Create" class="aura-dashboard-card">
+            <h3>📜 My Kundli</h3>
+            <p>Generate and view your birth chart</p>
+        </a>
+    </div>
+
+    <!-- Zodiac Signs -->
+    <div class="col-md-6">
+        <a href="/Zodiac" class="aura-dashboard-card">
+            <h3>♈ Zodiac Signs</h3>
+            <p>Explore all zodiac personalities</p>
+        </a>
+    </div>
+
+    <!-- Predictions -->
+    <div class="col-md-6">
+        <a href="/Predictions" class="aura-dashboard-card">
+            <h3>🔮 Predictions</h3>
+            <p>Love, career & life insights</p>
+        </a>
+    </div>
+
 </div>

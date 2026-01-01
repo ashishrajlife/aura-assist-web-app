@@ -1,0 +1,51 @@
+@model Aura.Web.Models.ViewModels.KundliInputVM
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+
+        <div class="aura-card">
+            <h2 class="aura-title text-center mb-4">Create Your Kundli</h2>
+
+            <form method="post">
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label>Full Name</label>
+                        <input asp-for="FullName" class="form-control aura-input" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Date of Birth</label>
+                        <input asp-for="DateOfBirth" type="date" class="form-control aura-input" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Time of Birth</label>
+                        <input asp-for="TimeOfBirth" type="time" class="form-control aura-input" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Place of Birth</label>
+                        <input asp-for="PlaceOfBirth" class="form-control aura-input" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Latitude</label>
+                        <input asp-for="Latitude" class="form-control aura-input" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Longitude</label>
+                        <input asp-for="Longitude" class="form-control aura-input" />
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn aura-btn-gold">Generate Kundli</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
