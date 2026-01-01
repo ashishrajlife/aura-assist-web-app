@@ -214,3 +214,12 @@ INSERT INTO Nakshatras (Name, StartDegree, EndDegree) VALUES
 ('Purva Bhadrapada', 320.00, 333.20),
 ('Uttara Bhadrapada', 333.20, 346.40),
 ('Revati', 346.40, 360.00);
+
+
+-- Sample Data 
+
+INSERT INTO Horoscopes 
+(ZodiacId, TypeId, HoroscopeDate, PredictionText)
+VALUES 
+(5, 1, CAST(GETDATE() AS DATE),
+'Today brings confidence and leadership opportunities.');

@@ -1,0 +1,23 @@
+@model Aura.Web.Models.ViewModels.DailyHoroscopeVM
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+
+        <div class="aura-card text-center">
+
+            <h1 class="aura-title">
+                @Model.ZodiacName @Model.Symbol
+            </h1>
+
+            <p class="aura-date">
+                @Model.Date.ToString("dddd, dd MMMM yyyy")
+            </p>
+
+            <div class="aura-prediction">
+                @Model.Prediction
+            </div>
+
+        </div>
+
+    </div>
+</div>

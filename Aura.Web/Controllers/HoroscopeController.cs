@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Aura.Web.Services.Interfaces;
-using Aura.Web.Data;
+using Aura.Web.Models.ViewModels;
 using System;
 
 namespace Aura.Web.Controllers
@@ -8,16 +8,33 @@ namespace Aura.Web.Controllers
     public class HoroscopeController : Controller
     {
         private readonly IZodiacService _zodiacService;
+        private readonly IHoroscopeService _horoscopeService;
 
-        public HoroscopeController(IZodiacService zodiacService)
+        public HoroscopeController(
+            IZodiacService zodiacService,
+            IHoroscopeService horoscopeService)
         {
             _zodiacService = zodiacService;
+            _horoscopeService = horoscopeService;
         }
 
-        public IActionResult Daily(DateTime dob)  //http://localhost:5159/Horoscope/Daily?dob=1998-12-25
+        public IActionResult Daily(DateTime dob)
         {
             var zodiac = _zodiacService.GetZodiacByDOB(dob);
-            return Content($"Your Zodiac Sign is {zodiac.Name}");
+
+            var horoscope = _horoscopeService
+                .GetDailyHoroscope(zodiac.ZodiacSignId, DateTime.Today);
+
+            var vm = new DailyHoroscopeVM
+            {
+                ZodiacName = zodiac.Name,
+                Symbol = zodiac.Symbol,
+                Date = DateTime.Today,
+                Prediction = horoscope?.PredictionText 
+                             ?? "No horoscope available for today."
+            };
+
+            return View(vm);
         }
     }
 }

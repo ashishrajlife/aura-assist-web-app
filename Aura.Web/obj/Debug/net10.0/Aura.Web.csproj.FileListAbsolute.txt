@@ -278,3 +278,4 @@ E:\aura-astroassist-webapp\Aura.Web\obj\Debug\net10.0\refint\Aura.Web.dll
 E:\aura-astroassist-webapp\Aura.Web\obj\Debug\net10.0\Aura.Web.pdb
 E:\aura-astroassist-webapp\Aura.Web\obj\Debug\net10.0\Aura.Web.genruntimeconfig.cache
 E:\aura-astroassist-webapp\Aura.Web\obj\Debug\net10.0\ref\Aura.Web.dll
+E:\aura-astroassist-webapp\Aura.Web\obj\Debug\net10.0\compressed\ebd6ntqmhr-{0}-ii1n8o2ccz-ii1n8o2ccz.gz

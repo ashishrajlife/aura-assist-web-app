@@ -13,6 +13,7 @@ builder.Services.AddDbContext<AuraDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AuraConnection")));
 
 builder.Services.AddScoped<IZodiacService, ZodiacService>();
+builder.Services.AddScoped<IHoroscopeService, HoroscopeService>();
 
 
 var app = builder.Build();
