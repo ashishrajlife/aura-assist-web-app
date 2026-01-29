@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("aura-assist-prod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26d0e7b649aee1b9950fac9662d9585851c3eb52")]
 [assembly: System.Reflection.AssemblyProductAttribute("aura-assist-prod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("aura-assist-prod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\aura-assist\\aura-assist-prod\\aura-assist-prod\\aura-assist-prod.csproj": {}
+    "E:\\aura-assist\\aura-assist-prod.csproj": {}
   },
   "projects": {
-    "E:\\aura-assist\\aura-assist-prod\\aura-assist-prod\\aura-assist-prod.csproj": {
+    "E:\\aura-assist\\aura-assist-prod.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\aura-assist\\aura-assist-prod\\aura-assist-prod\\aura-assist-prod.csproj",
+        "projectUniqueName": "E:\\aura-assist\\aura-assist-prod.csproj",
         "projectName": "aura-assist-prod",
-        "projectPath": "E:\\aura-assist\\aura-assist-prod\\aura-assist-prod\\aura-assist-prod.csproj",
+        "projectPath": "E:\\aura-assist\\aura-assist-prod.csproj",
         "packagesPath": "C:\\Users\\ashis\\.nuget\\packages\\",
-        "outputPath": "E:\\aura-assist\\aura-assist-prod\\aura-assist-prod\\obj\\",
+        "outputPath": "E:\\aura-assist\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

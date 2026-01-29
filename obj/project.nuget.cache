@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LFyCGEtGBfE=",
+  "dgSpecHash": "fNx4Zr1U7YQ=",
   "success": true,
-  "projectFilePath": "E:\\aura-assist\\aura-assist-prod\\aura-assist-prod\\aura-assist-prod.csproj",
+  "projectFilePath": "E:\\aura-assist\\aura-assist-prod.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ashis\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\ashis\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
