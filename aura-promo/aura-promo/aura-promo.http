@@ -1,0 +1,6 @@
+@aura_promo_HostAddress = http://localhost:5143
+
+GET {{aura_promo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
