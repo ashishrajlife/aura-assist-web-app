@@ -1,0 +1,6 @@
+@aura_assist_prod_HostAddress = http://localhost:5046
+
+GET {{aura_assist_prod_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
