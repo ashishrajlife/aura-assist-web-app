@@ -1,0 +1,181 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jyotish</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Noto+Sans+Devanagari:wght@300;400;600&amp;display=swap" rel="stylesheet" />
+  <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+  <style>
+    :root {
+      --gold:      #c9a84c;
+      --gold-lt:   #e8c97a;
+      --gold-dim:  #8a6d2e;
+      --deep:      #050810;
+      --surface:   #0d1428;
+      --surface2:  #111a33;
+      --text:      #e8dfc8;
+      --text-dim:  #9a8f7a;
+      --error:     #e07070;
+      --success:   #7ecba0;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Crimson Text', serif;
+      background: var(--deep);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .btn-small {
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: #c9a84c;
+    padding: 3px 8px;
+    margin: 2px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    border-radius: 2px;
+}
+
+.btn-small:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: #c9a84c;
+}
+
+    /* Starfield background */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        radial-gradient(1px 1px at  8% 12%, rgba(255,255,255,.55) 0%, transparent 100%),
+        radial-gradient(1px 1px at 22% 58%, rgba(255,255,255,.40) 0%, transparent 100%),
+        radial-gradient(2px 2px at 38% 28%, rgba(255,255,255,.65) 0%, transparent 100%),
+        radial-gradient(1px 1px at 53% 77%, rgba(255,255,255,.50) 0%, transparent 100%),
+        radial-gradient(1px 1px at 68% 18%, rgba(255,255,255,.60) 0%, transparent 100%),
+        radial-gradient(2px 2px at 78% 52%, rgba(255,255,255,.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 88% 72%, rgba(255,255,255,.65) 0%, transparent 100%),
+        radial-gradient(1px 1px at 14% 88%, rgba(255,255,255,.45) 0%, transparent 100%),
+        radial-gradient(1px 1px at 58%  8%, rgba(255,255,255,.55) 0%, transparent 100%),
+        radial-gradient(1px 1px at 91% 32%, rgba(255,255,255,.50) 0%, transparent 100%),
+        radial-gradient(2px 2px at  4% 47%, rgba(201,168,76,.25)  0%, transparent 100%),
+        radial-gradient(2px 2px at 83%  9%, rgba(107,141,214,.25) 0%, transparent 100%);
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 50%   0%, rgba(107,141,214,.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 80% 100%, rgba(167,139,250,.05) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at  0%  60%, rgba(201,168, 76,.04) 0%, transparent 70%);
+    }
+
+    /* ---- NAVBAR ---- */
+    .navbar {
+      position: relative; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px;
+      border-bottom: 1px solid rgba(201,168,76,.15);
+      background: rgba(5,8,16,.88);
+      backdrop-filter: blur(14px);
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 3px; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-moon {
+      font-size: 1.4rem;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { filter: drop-shadow(0 0  4px rgba(201,168,76,.4)); }
+      50%      { filter: drop-shadow(0 0 14px rgba(201,168,76,.8)); }
+    }
+    .nav-actions { display:flex; gap:10px; align-items:center; }
+    .nav-username {
+      color: var(--gold-dim); font-family:'Cinzel',serif;
+      font-size:.68rem; letter-spacing:1.5px;
+    }
+
+    /* ---- BUTTONS ---- */
+    .btn {
+      font-family: 'Cinzel', serif; font-size:.72rem; letter-spacing:1.8px;
+      padding: 9px 22px; border-radius: 2px; cursor: pointer;
+      transition: all .25s ease; text-transform: uppercase;
+      text-decoration: none; display: inline-block; border: none;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--gold-dim); color: var(--gold);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold); background: rgba(201,168,76,.08);
+      box-shadow: 0 0 14px rgba(201,168,76,.15);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+      color: var(--deep); font-weight: 700;
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+      box-shadow: 0 0 20px rgba(201,168,76,.3);
+      transform: translateY(-1px);
+    }
+    .btn-sm { padding:7px 16px; font-size:.64rem; }
+    .btn-full { width:100%; padding:14px; font-size:.78rem; letter-spacing:2.5px; margin-top:6px; }
+
+    /* ---- MAIN ---- */
+    .main-content { position:relative; z-index:1; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      position: relative; z-index:1;
+      text-align: center; padding: 24px;
+      border-top: 1px solid rgba(201,168,76,.08);
+      font-family: 'Cinzel', serif; font-size:.7rem;
+      letter-spacing: 2px; color: rgba(154,143,122,.4);
+      margin-top: 60px;
+    }
+
+    @media(max-width:520px) {
+      .navbar { padding:12px 16px; }
+      .nav-logo { font-size:1rem; }
+      .btn { padding:7px 12px; font-size:.62rem; }
+    }
+  </style>
+</head>
+<body>
+
+
+<form id="MainForm" runat="server">
+
+ 
+  <nav class="navbar">
+    <a class="nav-logo" href="Default.aspx">
+      <span class="nav-moon">&#9789;</span> Aura
+    </a>
+    <div class="nav-actions">
+      <% if (Session["UserId"] != null) { %>
+        <span class="nav-username">&#10022;&nbsp; <%: Session["UserName"] %></span>
+        <asp:LinkButton ID="btnLogout" runat="server" CssClass="btn btn-outline btn-sm"
+          OnClick="btnLogout_Click" Text="Logout" />
+      <% } else { %>
+        <a class="btn btn-outline" href="Login.aspx">Login</a>
+        <a class="btn btn-gold"    href="Register.aspx">Register</a>
+      <% } %>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+  </div>
+</form>
+  <footer>&#10022; &nbsp; JYOTISH &nbsp;&middot;&nbsp; Vedic Astrology &nbsp; &#10022;</footer>
+
+</body>
+</html>
